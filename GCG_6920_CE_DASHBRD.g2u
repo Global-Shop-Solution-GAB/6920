@@ -1,0 +1,1327 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.FormEC..Create(BaseForm)
+Gui.FormEC..Caption("Equipment Calibration")
+Gui.FormEC..Size(1211,741)
+Gui.FormEC..MinX(0)
+Gui.FormEC..MinY(0)
+Gui.FormEC..Position(0,0)
+Gui.FormEC..AlwaysOnTop(False)
+Gui.FormEC..FontName("Tahoma")
+Gui.FormEC..FontSize(8.25)
+Gui.FormEC..ControlBox(True)
+Gui.FormEC..MaxButton(True)
+Gui.FormEC..MinButton(True)
+Gui.FormEC..MousePointer(0)
+Gui.FormEC..Moveable(True)
+Gui.FormEC..Sizeable(True)
+Gui.FormEC..ShowInTaskBar(True)
+Gui.FormEC..TitleBar(True)
+Gui.FormEC..Event(UnLoad,FormEC_UnLoad)
+Gui.FormEC.lbl1.Create(Label,"Equipment Name",True,95,13,0,15,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl1.BorderStyle(0)
+Gui.FormEC.lbl1.FontStyle(True,False,False,False,False)
+Gui.FormEC.txtEquipName.Create(TextBox,"",True,100,20,0,14,29,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.ddlEquipType.Create(DropDownList)
+Gui.FormEC.ddlEquipType.Enabled(True)
+Gui.FormEC.ddlEquipType.Visible(True)
+Gui.FormEC.ddlEquipType.Zorder(0)
+Gui.FormEC.ddlEquipType.Size(100,20)
+Gui.FormEC.ddlEquipType.Position(121,29)
+Gui.FormEC.ddlEquipType.FontName("Tahoma")
+Gui.FormEC.ddlEquipType.FontSize(8.25)
+Gui.FormEC.lbl2.Create(Label,"Equipment Type",True,91,13,0,123,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl2.BorderStyle(0)
+Gui.FormEC.lbl2.FontStyle(True,False,False,False,False)
+Gui.FormEC.lbl3.Create(Label,"Calibrated",True,58,13,0,229,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl3.BorderStyle(0)
+Gui.FormEC.lbl3.FontStyle(True,False,False,False,False)
+Gui.FormEC.ddlCalibrated.Create(DropDownList)
+Gui.FormEC.ddlCalibrated.Enabled(True)
+Gui.FormEC.ddlCalibrated.Visible(True)
+Gui.FormEC.ddlCalibrated.Zorder(0)
+Gui.FormEC.ddlCalibrated.Size(61,20)
+Gui.FormEC.ddlCalibrated.Position(228,29)
+Gui.FormEC.ddlCalibrated.FontName("Tahoma")
+Gui.FormEC.ddlCalibrated.FontSize(8.25)
+Gui.FormEC.txtManuf.Create(TextBox,"",True,86,20,0,297,29,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.lbl4.Create(Label,"Manufacturer",True,77,13,0,298,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl4.BorderStyle(0)
+Gui.FormEC.lbl4.FontStyle(True,False,False,False,False)
+Gui.FormEC.lbl5.Create(Label,"Model #",True,46,13,0,391,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl5.BorderStyle(0)
+Gui.FormEC.lbl5.FontStyle(True,False,False,False,False)
+Gui.FormEC.txtModel.Create(TextBox,"",True,78,20,0,390,29,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.txtSerial.Create(TextBox,"",True,76,20,0,475,29,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.lbl6.Create(Label,"Serial #",True,44,13,0,477,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl6.BorderStyle(0)
+Gui.FormEC.lbl6.FontStyle(True,False,False,False,False)
+Gui.FormEC.lbl7.Create(Label,"L2ID #",True,38,13,0,561,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl7.BorderStyle(0)
+Gui.FormEC.lbl7.FontStyle(True,False,False,False,False)
+Gui.FormEC.txtL2ID.Create(TextBox,"",True,76,20,0,559,29,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.txtCalFreq.Create(TextBox,"0",True,50,20,0,643,29,True,2,"Tahoma",8.25,,1)
+Gui.FormEC.txtCalFreq.NumericOnly(2)
+Gui.FormEC.txtCalFreq.ToolTip("Number of Day")
+Gui.FormEC.lbl8.Create(Label,"Cal Freq",True,45,13,0,645,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl8.BorderStyle(0)
+Gui.FormEC.lbl8.FontStyle(True,False,False,False,False)
+Gui.FormEC.lbl9.Create(Label,"Last Cal Date",True,74,13,0,703,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl9.BorderStyle(0)
+Gui.FormEC.lbl9.FontStyle(True,False,False,False,False)
+Gui.FormEC.dtpLasCalDate.Create(DatePicker)
+Gui.FormEC.dtpLasCalDate.AllowBlank(True)
+Gui.FormEC.dtpLasCalDate.Enabled(True)
+Gui.FormEC.dtpLasCalDate.Visible(True)
+Gui.FormEC.dtpLasCalDate.Zorder(0)
+Gui.FormEC.dtpLasCalDate.Size(81,20)
+Gui.FormEC.dtpLasCalDate.Position(702,29)
+Gui.FormEC.dtpLasCalDate.CheckBox(False)
+Gui.FormEC.dtpLasCalDate.FontName("Tahoma")
+Gui.FormEC.dtpLasCalDate.FontSize(8.25)
+Gui.FormEC.dtpCalDueDate.Create(DatePicker)
+Gui.FormEC.dtpCalDueDate.AllowBlank(True)
+Gui.FormEC.dtpCalDueDate.Enabled(True)
+Gui.FormEC.dtpCalDueDate.Visible(True)
+Gui.FormEC.dtpCalDueDate.Zorder(0)
+Gui.FormEC.dtpCalDueDate.Size(100,20)
+Gui.FormEC.dtpCalDueDate.Position(793,29)
+Gui.FormEC.dtpCalDueDate.CheckBox(False)
+Gui.FormEC.dtpCalDueDate.FontName("Tahoma")
+Gui.FormEC.dtpCalDueDate.FontSize(8.25)
+Gui.FormEC.lbl10.Create(Label,"Cal Due Date",True,72,13,0,794,13,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl10.BorderStyle(0)
+Gui.FormEC.lbl10.FontStyle(True,False,False,False,False)
+Gui.FormEC.lbl11.Create(Label,"Status",True,37,13,0,17,59,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl11.BorderStyle(0)
+Gui.FormEC.lbl11.FontStyle(True,False,False,False,False)
+Gui.FormEC.ddlStatus.Create(DropDownList)
+Gui.FormEC.ddlStatus.Enabled(True)
+Gui.FormEC.ddlStatus.Visible(True)
+Gui.FormEC.ddlStatus.Zorder(0)
+Gui.FormEC.ddlStatus.Size(77,20)
+Gui.FormEC.ddlStatus.Position(15,75)
+Gui.FormEC.ddlStatus.FontName("Tahoma")
+Gui.FormEC.ddlStatus.FontSize(8.25)
+Gui.FormEC.txtCurLoc.Create(TextBox,"",True,100,20,0,101,75,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.lbl12.Create(Label,"Current Location",True,94,13,0,102,59,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl12.BorderStyle(0)
+Gui.FormEC.lbl12.FontStyle(True,False,False,False,False)
+Gui.FormEC.lbl13.Create(Label,"Perm Location",True,81,13,0,210,59,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl13.BorderStyle(0)
+Gui.FormEC.lbl13.FontStyle(True,False,False,False,False)
+Gui.FormEC.txtPermLoc.Create(TextBox,"",True,100,20,0,209,75,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.lbl14.Create(Label,"Issue",True,31,13,0,318,59,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl14.BorderStyle(0)
+Gui.FormEC.lbl14.FontStyle(True,False,False,False,False)
+Gui.FormEC.txtIssue.Create(TextBox,"",True,100,20,0,317,75,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.txtOwner.Create(TextBox,"",True,100,20,0,424,75,True,0,"Tahoma",8.25,,1)
+Gui.FormEC.lbl15.Create(Label,"Owner",True,36,13,0,426,59,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl15.BorderStyle(0)
+Gui.FormEC.lbl15.FontStyle(True,False,False,False,False)
+Gui.FormEC.txtLinkDoc.Create(TextBox,"",True,496,20,0,533,75,False,0,"Tahoma",8.25,,1)
+Gui.FormEC.lbl16.Create(Label,"Linked Doc",True,61,13,0,535,59,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl16.BorderStyle(0)
+Gui.FormEC.lbl16.FontStyle(True,False,False,False,False)
+Gui.FormEC.cmdDocBrowse.Create(Button)
+Gui.FormEC.cmdDocBrowse.Enabled(True)
+Gui.FormEC.cmdDocBrowse.Visible(True)
+Gui.FormEC.cmdDocBrowse.Zorder(0)
+Gui.FormEC.cmdDocBrowse.Size(23,23)
+Gui.FormEC.cmdDocBrowse.Position(1036,73)
+Gui.FormEC.cmdDocBrowse.Caption("^")
+Gui.FormEC.cmdDocBrowse.FontName("Tahoma")
+Gui.FormEC.cmdDocBrowse.FontSize(8.25)
+Gui.FormEC.cmdDocBrowse.Event(Click,cmdDocBrowse_Click)
+Gui.FormEC.cmdSave.Create(Button)
+Gui.FormEC.cmdSave.Enabled(True)
+Gui.FormEC.cmdSave.Visible(True)
+Gui.FormEC.cmdSave.Zorder(0)
+Gui.FormEC.cmdSave.Size(75,23)
+Gui.FormEC.cmdSave.Position(1075,73)
+Gui.FormEC.cmdSave.Caption("SAVE")
+Gui.FormEC.cmdSave.FontName("Tahoma")
+Gui.FormEC.cmdSave.FontSize(8.25)
+Gui.FormEC.cmdSave.FontStyle(True,False,False,False,False)
+Gui.FormEC.cmdSave.Event(Click,cmdSave_Click)
+Gui.FormEC.GsGcEquip.Create(GsGridControl)
+Gui.FormEC.GsGcEquip.Enabled(True)
+Gui.FormEC.GsGcEquip.Visible(True)
+Gui.FormEC.GsGcEquip.Zorder(0)
+Gui.FormEC.GsGcEquip.Size(1185,342)
+Gui.FormEC.GsGcEquip.Position(16,137)
+Gui.FormEC.GsGcEquip.Anchor(15)
+Gui.FormEC.GsGcEquip.Event(RowCellClick,GsGcEquip_RowCellClick)
+Gui.FormEC.GsGcCal.Create(GsGridControl)
+Gui.FormEC.GsGcCal.Enabled(True)
+Gui.FormEC.GsGcCal.Visible(True)
+Gui.FormEC.GsGcCal.Zorder(0)
+Gui.FormEC.GsGcCal.Size(1185,169)
+Gui.FormEC.GsGcCal.Position(15,533)
+Gui.FormEC.GsGcCal.Anchor(14)
+Gui.FormEC.GsGcCal.Event(RowCellClick,GsGcCal_RowCellClick)
+Gui.FormEC.cmdCalDocBrowse.Create(Button)
+Gui.FormEC.cmdCalDocBrowse.Enabled(False)
+Gui.FormEC.cmdCalDocBrowse.Visible(True)
+Gui.FormEC.cmdCalDocBrowse.Zorder(0)
+Gui.FormEC.cmdCalDocBrowse.Size(23,23)
+Gui.FormEC.cmdCalDocBrowse.Position(1041,503)
+Gui.FormEC.cmdCalDocBrowse.Caption("^")
+Gui.FormEC.cmdCalDocBrowse.FontName("Tahoma")
+Gui.FormEC.cmdCalDocBrowse.FontSize(8.25)
+Gui.FormEC.cmdCalDocBrowse.Anchor(10)
+Gui.FormEC.cmdCalDocBrowse.Event(Click,cmdCalDocBrowse_Click)
+Gui.FormEC.lbl17.Create(Label,"Cal Linked Doc",True,81,13,0,452,507,True,0,"Tahoma",8.25,,0,0)
+Gui.FormEC.lbl17.BorderStyle(0)
+Gui.FormEC.lbl17.Anchor(10)
+Gui.FormEC.lbl17.FontStyle(True,False,False,False,False)
+Gui.FormEC.txtCalLinkDoc.Create(TextBox,"",True,496,20,0,537,504,False,0,"Tahoma",8.25,,1)
+Gui.FormEC.txtCalLinkDoc.Anchor(10)
+Gui.FormEC.lbl18.Create(Label,"Equipment Records",True,119,14,0,16,116,True,0,"Tahoma",9,,0,0)
+Gui.FormEC.lbl18.BorderStyle(0)
+Gui.FormEC.lbl18.FontStyle(True,False,False,False,False)
+Gui.FormEC.lbl19.Create(Label,"Calibration Records",True,119,14,0,18,516,True,0,"Tahoma",9,,0,0)
+Gui.FormEC.lbl19.BorderStyle(0)
+Gui.FormEC.lbl19.FontStyle(True,False,False,False,False)
+Gui.FormEC.lbl19.Anchor(6)
+Gui.FormEC.cmd1.Create(Button)
+Gui.FormEC.cmd1.Enabled(True)
+Gui.FormEC.cmd1.Visible(True)
+Gui.FormEC.cmd1.Zorder(0)
+Gui.FormEC.cmd1.Size(75,23)
+Gui.FormEC.cmd1.Position(1074,28)
+Gui.FormEC.cmd1.Caption("REFRESH")
+Gui.FormEC.cmd1.FontName("Tahoma")
+Gui.FormEC.cmd1.FontSize(8.25)
+Gui.FormEC.cmd1.Event(Click,Refresh)
+Gui.FormEC.cmdUpdateDoc.Create(Button)
+Gui.FormEC.cmdUpdateDoc.Enabled(False)
+Gui.FormEC.cmdUpdateDoc.Visible(True)
+Gui.FormEC.cmdUpdateDoc.Zorder(0)
+Gui.FormEC.cmdUpdateDoc.Size(88,23)
+Gui.FormEC.cmdUpdateDoc.Position(1078,503)
+Gui.FormEC.cmdUpdateDoc.Caption("UPDATE DOC")
+Gui.FormEC.cmdUpdateDoc.FontName("Tahoma")
+Gui.FormEC.cmdUpdateDoc.FontSize(8.25)
+Gui.FormEC.cmdUpdateDoc.Anchor(10)
+Gui.FormEC.cmdUpdateDoc.FontStyle(True,False,False,False,False)
+Gui.FormEC.cmdUpdateDoc.Event(Click,cmdUpdateDoc_Click)
+Gui.FormNotes..Create(BaseForm)
+Gui.FormNotes..Caption("Notes")
+Gui.FormNotes..Size(413,365)
+Gui.FormNotes..MinX(0)
+Gui.FormNotes..MinY(0)
+Gui.FormNotes..Position(0,0)
+Gui.FormNotes..AlwaysOnTop(False)
+Gui.FormNotes..FontName("Tahoma")
+Gui.FormNotes..FontSize(8.25)
+Gui.FormNotes..ControlBox(True)
+Gui.FormNotes..MaxButton(False)
+Gui.FormNotes..MinButton(True)
+Gui.FormNotes..MousePointer(0)
+Gui.FormNotes..Moveable(True)
+Gui.FormNotes..Sizeable(False)
+Gui.FormNotes..ShowInTaskBar(True)
+Gui.FormNotes..TitleBar(True)
+Gui.FormNotes..Event(UnLoad,FormNotes_UnLoad)
+Gui.FormNotes.txtNotes.Create(TextboxM)
+Gui.FormNotes.txtNotes.Enabled(True)
+Gui.FormNotes.txtNotes.Visible(True)
+Gui.FormNotes.txtNotes.Zorder(0)
+Gui.FormNotes.txtNotes.Size(383,217)
+Gui.FormNotes.txtNotes.Position(13,58)
+Gui.FormNotes.txtNotes.FontName("Tahoma")
+Gui.FormNotes.txtNotes.FontSize(8.25)
+Gui.FormNotes.lbl2.Create(Label,"L2ID",True,26,13,0,19,18,True,0,"Tahoma",8.25,,0,0)
+Gui.FormNotes.lbl2.BorderStyle(0)
+Gui.FormNotes.lbl2.FontStyle(True,False,False,False,False)
+Gui.FormNotes.txtL2ID.Create(TextBox,"",True,226,20,0,56,15,False,0,"Tahoma",8.25,,1)
+Gui.FormNotes.cmdNotesSave.Create(Button)
+Gui.FormNotes.cmdNotesSave.Enabled(True)
+Gui.FormNotes.cmdNotesSave.Visible(True)
+Gui.FormNotes.cmdNotesSave.Zorder(0)
+Gui.FormNotes.cmdNotesSave.Size(75,23)
+Gui.FormNotes.cmdNotesSave.Position(76,292)
+Gui.FormNotes.cmdNotesSave.Caption("SAVE")
+Gui.FormNotes.cmdNotesSave.FontName("Tahoma")
+Gui.FormNotes.cmdNotesSave.FontSize(8.25)
+Gui.FormNotes.cmdNotesSave.FontStyle(True,False,False,False,False)
+Gui.FormNotes.cmdNotesSave.Event(Click,cmdNotesSave_Click)
+Gui.FormNotes.lbl1.Create(Label,"Notes",True,32,13,0,18,40,True,0,"Tahoma",8.25,,0,0)
+Gui.FormNotes.lbl1.BorderStyle(0)
+Gui.FormNotes.lbl1.FontStyle(True,False,False,False,False)
+Gui.FormNotes.cmdNotesCancel.Create(Button)
+Gui.FormNotes.cmdNotesCancel.Enabled(True)
+Gui.FormNotes.cmdNotesCancel.Visible(True)
+Gui.FormNotes.cmdNotesCancel.Zorder(0)
+Gui.FormNotes.cmdNotesCancel.Size(75,23)
+Gui.FormNotes.cmdNotesCancel.Position(260,292)
+Gui.FormNotes.cmdNotesCancel.Caption("CANCEL")
+Gui.FormNotes.cmdNotesCancel.FontName("Tahoma")
+Gui.FormNotes.cmdNotesCancel.FontSize(8.25)
+Gui.FormNotes.cmdNotesCancel.FontStyle(True,False,False,False,False)
+Gui.FormNotes.cmdNotesCancel.Event(Click,cmdNotesCancel_Click)
+Program.Sub.ScreenSU.End
+
+
+Program.Sub.Preflight.Start
+v.Global.dDateCalDue_Current.Declare(Date)
+v.Global.sL2ID_Current.Declare(String)
+v.Global.sNotesType.Declare(String)
+
+Program.Sub.Preflight.End
+
+'GCG 6920 
+'	Sep 2022 - Nam Le 
+'Cus: L2 Aviation
+
+
+'BUSINESS CASE: As a supplier to the aviation industry, the customer has a responsibility to track the tools
+'they use in their manufacturing processes and their calibration dates. They would like to create a dashboard for
+'tracking their tools by serial number and internal ID# so they can easily access past and upcoming calibration
+'dates. They are also required to keep records of past calibration records for each tool.
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.Try
+	Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+	
+	'populate dropdowns
+	f.Intrinsic.Control.CallSub(PopulateDropdownOptions)
+	f.Intrinsic.Control.CallSub(AddContextMenu)
+	f.Intrinsic.Control.CallSub(ClearText)
+	
+	'delete 10yr old records in calibration
+	f.Intrinsic.Control.CallSub(Delete10yRecords)
+	
+	'get data for equip grid
+	f.Intrinsic.Control.CallSub(GetDataEquip)
+	
+	
+	'deserialize
+	f.Intrinsic.Control.CallSub(Deserialize)
+	
+	gui.FormEC..Show
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+'populate Dropdown options
+Program.Sub.PopulateDropdownOptions.Start
+f.Intrinsic.Control.Try
+	'calibrated?
+	gui.FormEC.ddlCalibrated.AddItem("Y")
+	gui.FormEC.ddlCalibrated.AddItem("N")
+	gui.FormEC.ddlCalibrated.Text("N")
+	
+	'Type
+	gui.FormEC.ddlEquipType.AddItem("Crimper")
+	gui.FormEC.ddlEquipType.AddItem("Die Set")
+	gui.FormEC.ddlEquipType.AddItem("Gauge")
+	gui.FormEC.ddlEquipType.AddItem("Multimeter")
+	gui.FormEC.ddlEquipType.AddItem("Tester")
+	gui.FormEC.ddlEquipType.AddItem("Tools")
+	gui.FormEC.ddlEquipType.AddItem("Other")
+	gui.FormEC.ddlEquipType.Text("Other")
+	
+	gui.FormEC.ddlStatus.AddItem("Active")
+	gui.FormEC.ddlStatus.Text("Active")
+	gui.FormEC.ddlStatus.AddItem("Inactive")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.PopulateDropdownOptions.End
+
+'add context menu
+Program.Sub.AddContextMenu.Start
+f.Intrinsic.Control.Try
+	gui.FormEC..ContextMenuCreate("ctxMenu")
+	gui.FormEC.GsGcEquip.ContextMenuAttach("ctxMenu")
+	gui.FormEC..ContextMenuAddItem("ctxMenu", "ResetColumn",0,"Reset GridView Format")
+	gui.FormEC..ContextMenuAddItem("ctxMenu", "ExportToExcel",0,"Export To Excel")
+	gui.FormEC..ContextMenuAddItem("ctxMenu", "DeleteSelected",0,"Delete Selected Rows")
+	gui.FormEC..ContextMenuSetItemEventHandler("ctxMenu", "ResetColumn", "ResetColumn")
+	gui.FormEC..ContextMenuSetItemEventHandler("ctxMenu", "ExportToExcel", "ExportToExcel")
+	gui.FormEC..ContextMenuSetItemEventHandler("ctxMenu", "DeleteSelected", "DeleteSelected")
+	
+	gui.FormEC..ContextMenuCreate("ctxMenuCal")
+	gui.FormEC.GsGcCal.ContextMenuAttach("ctxMenuCal")
+	gui.FormEC..ContextMenuAddItem("ctxMenuCal", "ResetColumn",0,"Reset GridView Format")
+	gui.FormEC..ContextMenuSetItemEventHandler("ctxMenuCal", "ResetColumn", "ResetColumn_Cal")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.AddContextMenu.End
+
+'Reset Col
+Program.Sub.ResetColumn.Start
+f.Intrinsic.Control.Try
+	
+	'Column standard formats
+	'-------------------------------------------------------------
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SELECT", v.Enum.ColumnPropertyNames!VisibleIndex,0)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_NAME", v.Enum.ColumnPropertyNames!VisibleIndex,1)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_TYPE", v.Enum.ColumnPropertyNames!VisibleIndex,2)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CALIBRATED", v.Enum.ColumnPropertyNames!VisibleIndex,3)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MANUF", v.Enum.ColumnPropertyNames!VisibleIndex,4)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MODEL", v.Enum.ColumnPropertyNames!VisibleIndex,5)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SERIAL", v.Enum.ColumnPropertyNames!VisibleIndex,6)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "L2ID", v.Enum.ColumnPropertyNames!VisibleIndex,7)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CAL_FREQ", v.Enum.ColumnPropertyNames!VisibleIndex,8)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!VisibleIndex,9)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!VisibleIndex,10)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "STATUS", v.Enum.ColumnPropertyNames!VisibleIndex,11)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_CURRENT", v.Enum.ColumnPropertyNames!VisibleIndex,12)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_PERM", v.Enum.ColumnPropertyNames!VisibleIndex,13)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "ISSUE", v.Enum.ColumnPropertyNames!VisibleIndex,14)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_OWNER", v.Enum.ColumnPropertyNames!VisibleIndex,15)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "NOTES", v.Enum.ColumnPropertyNames!VisibleIndex,16)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DOC_LINK", v.Enum.ColumnPropertyNames!VisibleIndex,17)
+	
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_NAME", v.Enum.ColumnPropertyNames!MinWidth,140)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_TYPE", v.Enum.ColumnPropertyNames!MinWidth,80)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CALIBRATED", v.Enum.ColumnPropertyNames!MinWidth,40)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MANUF", v.Enum.ColumnPropertyNames!MinWidth,120)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MODEL", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SERIAL", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "L2ID", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CAL_FREQ", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "STATUS", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_CURRENT", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_PERM", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "ISSUE", v.Enum.ColumnPropertyNames!MinWidth,80)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_OWNER", v.Enum.ColumnPropertyNames!MinWidth,80)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "NOTES", v.Enum.ColumnPropertyNames!MinWidth,150)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DOC_LINK", v.Enum.ColumnPropertyNames!MinWidth,60)
+	'-------------------------------------------------------------
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.ResetColumn.End
+
+'Export Excel
+Program.Sub.ExportToExcel.Start
+f.Intrinsic.Control.Try
+	v.Local.sFile.Declare(String)
+	v.Local.bExt.Declare(Boolean)
+	
+	'file dialog
+	f.Intrinsic.UI.ShowSaveFileDialog("", "Excel Files |*xls;*xlsx", "", v.Local.sFile)
+	
+	'export
+	f.Intrinsic.Control.If(v.Local.sFile,!=,"***CANCEL***")
+		f.Intrinsic.String.IsInString(v.Local.sFile, "xls",False, v.Local.bExt)
+		f.Intrinsic.Control.If(v.Local.bExt,=,False)
+			f.Intrinsic.String.Build("{0}.xlsx", v.Local.sFile, v.Local.sFile)
+		f.Intrinsic.Control.EndIf
+		gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip","LINK_DOC", v.Enum.ColumnPropertyNames!Visible,True)
+		gui.FormEC.GsGcEquip.Export(v.Local.sFile, "xlsx")
+		gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip","LINK_DOC", v.Enum.ColumnPropertyNames!Visible,False)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.ExportToExcel.End
+
+'delete selected
+Program.Sub.DeleteSelected.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	v.Local.iCounter.Declare(Long)
+	v.Local.sListID.Declare(String)
+	
+	f.Data.DataView.Create("dtEquip","dvSelected", 22, "SELECT=1","")
+	f.Intrinsic.Control.If(v.DataTable.dtSelected.Exists)
+		f.Data.DataTable.Close("dtSelected")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.ToDataTableDistinct("dtEquip", "dvSelected", "dtSelected", "L2ID", True)
+	f.Data.DataView.Close("dtEquip","dvSelected")
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSelected.RowCount,>,0)
+		f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.dtSelected.RowCount--,1)
+			f.Intrinsic.Control.If(v.Local.iCounter,=,0)
+				f.Intrinsic.String.Build("'{0}'", v.DataTable.dtSelected(v.Local.iCounter).L2ID!FieldValTrim, v.Local.sListID)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("{0},'{1}'", v.Local.sListID, v.DataTable.dtSelected(v.Local.iCounter).L2ID!FieldValTrim, v.Local.sListID)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCounter)
+		
+		f.ODBC.Connection!Con.OpenCompanyConnection
+			f.Intrinsic.String.Build("delete from GCG_6920_EQUIP where RTRIM(L2ID) in ({0})", v.Local.sListID, v.Local.sSQL)
+			f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+			f.Intrinsic.String.Build("delete from GCG_6920_CAL where RTRIM(L2ID) in ({0})", v.Local.sListID, v.Local.sSQL)
+			f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+		f.ODBC.Connection!Con.Close
+		
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("No Row Selected.")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(Refresh)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.DeleteSelected.End
+
+'reset col cal
+Program.Sub.ResetColumn_Cal.Start
+f.Intrinsic.Control.Try
+	'Standard format
+	'------------------------------------------------------
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "L2ID", v.Enum.ColumnPropertyNames!VisibleIndex,0)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MANUF", v.Enum.ColumnPropertyNames!VisibleIndex,1)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MODEL", v.Enum.ColumnPropertyNames!VisibleIndex,2)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "SERIAL", v.Enum.ColumnPropertyNames!VisibleIndex,3)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_FREQ", v.Enum.ColumnPropertyNames!VisibleIndex,4)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!VisibleIndex,5)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!VisibleIndex,6)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "GS_USER", v.Enum.ColumnPropertyNames!VisibleIndex,7)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_NOTES", v.Enum.ColumnPropertyNames!VisibleIndex,8)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DOC_LINK", v.Enum.ColumnPropertyNames!VisibleIndex,9)
+	
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "L2ID", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MANUF", v.Enum.ColumnPropertyNames!MinWidth,120)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MODEL", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "SERIAL", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_FREQ", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "GS_USER", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_NOTES", v.Enum.ColumnPropertyNames!MinWidth,150)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DOC_LINK", v.Enum.ColumnPropertyNames!MinWidth,60)
+	'------------------------------------------------------
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.ResetColumn_Cal.End
+
+'delete 10yr old cal records
+Program.Sub.Delete10yRecords.Start
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!Con.OpenCompanyConnection
+		f.ODBC.Connection!Con.Execute("delete from GCG_6920_CAL where DATE_CAL_DUE < DATEADD(YEAR,-10,CURDATE())")
+	f.ODBC.Connection!Con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.Delete10yRecords.End
+
+'Refresh form
+Program.Sub.Refresh.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.CallSub(ClearText)
+	f.Intrinsic.Control.CallSub(GetDataEquip)
+	f.Intrinsic.Control.CallSub(Deserialize)
+	f.Intrinsic.Control.CallSub(GetDataCal, "argL2ID", "")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.Refresh.End
+
+'get data Equip
+'	then bind data to grid
+'		format grid
+Program.Sub.GetDataEquip.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	
+	f.ODBC.Connection!Con.OpenCompanyConnection
+	
+	v.Local.sSQL.Set("select RTRIM(L2ID) L2ID,RTRIM(EQUIP_NAME) EQUIP_NAME,RTRIM(EQUIP_TYPE) EQUIP_TYPE,CALIBRATED,RTRIM(MANUF) MANUF,RTRIM(MODEL) MODEL,RTRIM(SERIAL) SERIAL,RTRIM(STATUS) STATUS, RTRIM(LOC_CURRENT) LOC_CURRENT,RTRIM(LOC_PERM) LOC_PERM,RTRIM(ISSUE) ISSUE,RTRIM(EQUIP_OWNER) EQUIP_OWNER, RTRIM(LINK_DOC) LINK_DOC, CAL_FREQ, DATE_LAST_CAL, DATE_CAL_DUE, RTRIM(NOTES) NOTES from GCG_6920_EQUIP order by STATUS ASC, DATE_CAL_DUE DESC;")
+	f.Intrinsic.Control.If(v.DataTable.dtEquip.Exists)
+		f.Data.DataTable.Close("dtEquip")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("dtEquip","con", v.Local.sSQL, True)
+	f.ODBC.Connection!Con.Close	
+	
+'	f.Intrinsic.Control.If(v.DataTable.dtEquip.RowCount,>,0)
+		f.Data.DataTable.AddColumn("dtEquip", "DOC_LINK", "String")
+		f.Data.DataTable.AddColumn("dtEquip", "SELECT", "Boolean", False)
+		f.Intrinsic.Control.CallSub(FormatGrid_Equip)
+'	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.GetDataEquip.End
+
+'format grid Equip
+Program.Sub.FormatGrid_Equip.Start
+f.Intrinsic.Control.Try
+	v.Local.iCounter.Declare(Long)
+
+	v.Local.dNext60.Declare(Date)
+	f.Intrinsic.Date.DateAdd("d", 60, v.Ambient.Date, v.Local.dNext60)
+	
+	gui.FormEC.GsGcEquip.Visible(False)
+	
+'	f.Intrinsic.Control.If(v.DataTable.dtEquip.RowCount,=,0)
+'		f.Intrinsic.Control.ExitSub
+'	f.Intrinsic.Control.EndIf
+	
+	gui.FormEC.GsGcEquip.AddGridviewFromDatatable("gvEquip", "dtEquip")
+	
+	gui.FormEC.GsGcEquip.SetGridviewProperty("gvEquip", v.Enum.GridViewPropertyNames!ColumnAutoWidth,False)
+	gui.FormEC.GsGcEquip.SetGridviewProperty("gvEquip", v.Enum.GridViewPropertyNames!Editable,False)
+	gui.FormEC.GsGcEquip.SetGridviewProperty("gvEquip", v.Enum.GridViewPropertyNames!ReadOnly,True)
+	gui.FormEC.GsGcEquip.SetGridviewProperty("gvEquip", v.Enum.GridViewPropertyNames!SuppressNothingDates,True)
+	gui.FormEC.GsGcEquip.SetGridviewProperty("gvEquip", v.Enum.GridViewPropertyNames!AllowColumnMoving,True)
+	
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_NAME", v.Enum.ColumnPropertyNames!Caption, "EQUIPMENT NAME")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_TYPE", v.Enum.ColumnPropertyNames!Caption, "EQUIPMENT TYPE")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MANUF", v.Enum.ColumnPropertyNames!Caption, "MANUFACTURER")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CAL_FREQ", v.Enum.ColumnPropertyNames!Caption, "CAL FREQ")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!Caption, "LAST CAL DATE")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!Caption, "CAL DUE DATE")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_CURRENT", v.Enum.ColumnPropertyNames!Caption, "CURRENT LOCATION")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_PERM", v.Enum.ColumnPropertyNames!Caption, "PERM LOCATION")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_OWNER", v.Enum.ColumnPropertyNames!Caption, "OWNER")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LINK_DOC", v.Enum.ColumnPropertyNames!Caption, "LINKED DOC")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DOC_LINK", v.Enum.ColumnPropertyNames!Caption, "DOC LINK")
+	
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "L2ID", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_NAME", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_TYPE", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CALIBRATED", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MANUF", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MODEL", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SERIAL", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CAL_FREQ", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "STATUS", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_CURRENT", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_PERM", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "ISSUE", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_OWNER", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LINK_DOC", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "NOTES", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DOC_LINK", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SELECT", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "L2ID", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_NAME", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_TYPE", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CALIBRATED", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MANUF", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MODEL", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SERIAL", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CAL_FREQ", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "STATUS", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_CURRENT", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_PERM", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "ISSUE", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_OWNER", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LINK_DOC", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "NOTES", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_TYPE", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CALIBRATED", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "STATUS", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MANUF", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MODEL", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CAL_FREQ", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SERIAL", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!DisplayCustomDateTime, "d")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!DisplayCustomDateTime, "d")
+	
+	
+	'coloring
+	gui.FormEC.GsGcEquip.AddStyleFormatCondition("gvEquip", "DATE_CAL_DUE", "isCalDueNext60", "LessOrEqual", v.Local.dNext60)
+	gui.FormEC.GsGcEquip.AddStyleFormatCondition("gvEquip", "DATE_CAL_DUE", "isCalDue", "LessOrEqual", v.Ambient.Date)
+	gui.FormEC.GsGcEquip.SetStyleFormatConditionProperty("gvEquip", "DATE_CAL_DUE", "isCalDueNext60", "BackColor", "lightyellow")
+	gui.FormEC.GsGcEquip.SetStyleFormatConditionProperty("gvEquip", "DATE_CAL_DUE", "isCalDue", "BackColor", "lightcoral")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "L2ID", v.Enum.ColumnPropertyNames!CellForeColor, "Orange")
+	
+	
+	'LINK DOC
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DOC_LINK", v.Enum.ColumnPropertyNames!Icon, "DCS-OFF")
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LINK_DOC", v.Enum.ColumnPropertyNames!Visible, False)
+	
+	f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.dtEquip.RowCount--,1)
+		f.Intrinsic.Control.If(v.DataTable.dtEquip(v.Local.iCounter).LINK_DOC!FieldValTrim,!=,"")
+			gui.FormEC.GsGcEquip.SetCellAppearance("gvEquip", 17, v.Local.iCounter, "Icon", "DCS-ON")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCounter)
+	
+	gui.FormEC.GsGcEquip.MainView("gvEquip")
+	
+	
+	
+	'Column standard formats
+	'-------------------------------------------------------------
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SELECT", v.Enum.ColumnPropertyNames!VisibleIndex,0)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_NAME", v.Enum.ColumnPropertyNames!VisibleIndex,1)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_TYPE", v.Enum.ColumnPropertyNames!VisibleIndex,2)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CALIBRATED", v.Enum.ColumnPropertyNames!VisibleIndex,3)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MANUF", v.Enum.ColumnPropertyNames!VisibleIndex,4)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MODEL", v.Enum.ColumnPropertyNames!VisibleIndex,5)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SERIAL", v.Enum.ColumnPropertyNames!VisibleIndex,6)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "L2ID", v.Enum.ColumnPropertyNames!VisibleIndex,7)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CAL_FREQ", v.Enum.ColumnPropertyNames!VisibleIndex,8)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!VisibleIndex,9)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!VisibleIndex,10)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "STATUS", v.Enum.ColumnPropertyNames!VisibleIndex,11)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_CURRENT", v.Enum.ColumnPropertyNames!VisibleIndex,12)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_PERM", v.Enum.ColumnPropertyNames!VisibleIndex,13)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "ISSUE", v.Enum.ColumnPropertyNames!VisibleIndex,14)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_OWNER", v.Enum.ColumnPropertyNames!VisibleIndex,15)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "NOTES", v.Enum.ColumnPropertyNames!VisibleIndex,16)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DOC_LINK", v.Enum.ColumnPropertyNames!VisibleIndex,17)
+	
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_NAME", v.Enum.ColumnPropertyNames!MinWidth,140)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_TYPE", v.Enum.ColumnPropertyNames!MinWidth,80)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CALIBRATED", v.Enum.ColumnPropertyNames!MinWidth,40)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MANUF", v.Enum.ColumnPropertyNames!MinWidth,120)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "MODEL", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "SERIAL", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "L2ID", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "CAL_FREQ", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "STATUS", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_CURRENT", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "LOC_PERM", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "ISSUE", v.Enum.ColumnPropertyNames!MinWidth,80)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "EQUIP_OWNER", v.Enum.ColumnPropertyNames!MinWidth,80)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "NOTES", v.Enum.ColumnPropertyNames!MinWidth,150)
+	gui.FormEC.GsGcEquip.SetColumnProperty("gvEquip", "DOC_LINK", v.Enum.ColumnPropertyNames!MinWidth,60)
+	'-------------------------------------------------------------
+	
+
+	gui.FormEC.GsGcEquip.Visible(True)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.FormatGrid_Equip.End
+
+'get data Cali
+'arg: argL2ID
+'	then bind data
+'		format grid
+Program.Sub.GetDataCal.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	v.Local.sID.Declare(String)
+	v.Local.sID.Set(v.Args.argL2ID)
+	
+'	f.Intrinsic.Control.If(v.Local.sID.Trim,=,"")
+'		f.Intrinsic.Control.ExitSub
+'	f.Intrinsic.Control.EndIf
+	
+	f.ODBC.Connection!Con.OpenCompanyConnection
+	
+	f.Intrinsic.String.Build("select RTRIM(L2ID) L2ID, RTRIM(CAL_NOTES) CAL_NOTES, RTRIM(CAL_LINK_DOC) CAL_LINK_DOC, RTRIM(GS_USER) GS_USER, RTRIM(MANUF) MANUF, RTRIM(MODEL) MODEL, RTRIM(SERIAL) SERIAL, CAL_FREQ, DATE_LAST_CAL, DATE_CAL_DUE from GCG_6920_CAL where RTRIM(L2ID) = '{0}' order by DATE_CAL_DUE DESC", v.Local.sID, v.Local.sSQL)
+	f.Intrinsic.Control.If(v.DataTable.dtCal.Exists)
+		f.Data.DataTable.Close("dtCal")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("dtCal","con", v.Local.sSQL, True)
+	
+	f.Data.DataTable.AddColumn("dtCal", "DOC_LINK", "String")
+	f.Intrinsic.Control.CallSub(Formatgrid_Cal)
+	
+	f.ODBC.Connection!Con.Close	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.GetDataCal.End
+
+'format grid Cal
+Program.Sub.FormatGrid_Cal.Start
+f.Intrinsic.Control.Try
+	v.Local.iCounter.Declare(Long)
+	
+	gui.FormEC.GsGcCal.Visible(False)
+	
+	gui.FormEC.GsGcCal.AddGridviewFromDatatable("gvCal", "dtCal")
+	
+	gui.FormEC.GsGcCal.SetGridviewProperty("gvCal", v.Enum.GridViewPropertyNames!ColumnAutoWidth, False)
+	gui.FormEC.GsGcCal.SetGridviewProperty("gvCal", v.Enum.GridViewPropertyNames!ReadOnly, True)
+	gui.FormEC.GsGcCal.SetGridviewProperty("gvCal", v.Enum.GridViewPropertyNames!Editable, False)
+	gui.FormEC.GsGcCal.SetGridviewProperty("gvCal", v.Enum.GridViewPropertyNames!SuppressNothingDates, True)
+	
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_NOTES", v.Enum.ColumnPropertyNames!Caption, "NOTES")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_LINK_DOC", v.Enum.ColumnPropertyNames!Caption, "LINKED DOC")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!Caption, "LAST CAL DATE")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!Caption, "CAL DUE DATE")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "GS_USER", v.Enum.ColumnPropertyNames!Caption, "ENTERED BY")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MANUF", v.Enum.ColumnPropertyNames!Caption, "MANUFACTURER")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_FREQ", v.Enum.ColumnPropertyNames!Caption, "CAL FREQ")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DOC_LINK", v.Enum.ColumnPropertyNames!Caption, "DOC LINK")
+	
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "L2ID", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_NOTES", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_LINK_DOC", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "GS_USER", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MANUF", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MODEL", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "SERIAL", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_FREQ", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DOC_LINK", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "L2ID", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_NOTES", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_LINK_DOC", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "GS_USER", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MANUF", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MODEL", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "SERIAL", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_FREQ", v.Enum.ColumnPropertyNames!HeaderHAlignment, "center")
+	
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "L2ID", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "GS_USER", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MANUF", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MODEL", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "SERIAL", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_FREQ", v.Enum.ColumnPropertyNames!CellHAlignment, "center")
+	
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!DisplayCustomDateTime, "d")
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!DisplayCustomDateTime, "d")
+	
+	'doc link
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_LINK_DOC", v.Enum.ColumnPropertyNames!Visible, False)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DOC_LINK", v.Enum.ColumnPropertyNames!Icon, "DCS-OFF")
+	
+	f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.dtCal.RowCount--,1)
+		f.Intrinsic.Control.If(v.DataTable.dtCal(v.Local.iCounter).CAL_LINK_DOC!FieldValTrim,!=,"")
+			gui.FormEC.GsGcCal.SetCellAppearance("gvCal", 10 ,v.Local.iCounter,"Icon", "DCS-ON")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCounter)
+	
+	gui.FormEC.GsGcCal.MainView("gvCal")
+	
+	
+	
+	'Standard format
+	'------------------------------------------------------
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "L2ID", v.Enum.ColumnPropertyNames!VisibleIndex,0)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MANUF", v.Enum.ColumnPropertyNames!VisibleIndex,1)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MODEL", v.Enum.ColumnPropertyNames!VisibleIndex,2)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "SERIAL", v.Enum.ColumnPropertyNames!VisibleIndex,3)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_FREQ", v.Enum.ColumnPropertyNames!VisibleIndex,4)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!VisibleIndex,5)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!VisibleIndex,6)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "GS_USER", v.Enum.ColumnPropertyNames!VisibleIndex,7)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_NOTES", v.Enum.ColumnPropertyNames!VisibleIndex,8)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DOC_LINK", v.Enum.ColumnPropertyNames!VisibleIndex,9)
+	
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "L2ID", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MANUF", v.Enum.ColumnPropertyNames!MinWidth,120)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "MODEL", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "SERIAL", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_FREQ", v.Enum.ColumnPropertyNames!MinWidth,60)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_LAST_CAL", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DATE_CAL_DUE", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "GS_USER", v.Enum.ColumnPropertyNames!MinWidth,100)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "CAL_NOTES", v.Enum.ColumnPropertyNames!MinWidth,150)
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "DOC_LINK", v.Enum.ColumnPropertyNames!MinWidth,60)
+	
+	gui.FormEC.GsGcCal.SetColumnProperty("gvCal", "L2ID", v.Enum.ColumnPropertyNames!CellForeColor,"Orange")
+	'------------------------------------------------------
+	
+	f.Intrinsic.Control.CallSub(Deserialize_Cal)
+	gui.FormEC.GsGcCal.Visible(True)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.FormatGrid_Cal.End
+
+'cmd Save click
+Program.Sub.cmdSave_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sEName.Declare(String)
+	v.Local.sCalDueDate_Curr.Declare(String)
+	v.Local.dCalDueDate_New.Declare(Date)
+	v.Local.sSQL.Declare(String)
+	v.Local.sL2ID.Declare(String)
+	v.Local.sRet.Declare(String)
+	v.Local.sEType.Declare(String)
+	v.Local.sCal.Declare(String)
+	v.Local.sManuf.Declare(String)
+	v.Local.sModel.Declare(String)
+	v.Local.sSerial.Declare(String)
+	v.Local.sCalFreq.Declare(String)
+	v.Local.dDateLastCal_New.Declare(Date)
+	v.Local.sDateLastCal_Curr.Declare(String)
+	v.Local.sStatus.Declare(String)
+	v.Local.sLocCur.Declare(String)
+	v.Local.sLocPerm.Declare(String)
+	v.Local.sIssue.Declare(String)
+	v.Local.sOwner.Declare(String)
+	v.Local.sDoclink.Declare(String)
+	v.Local.sTimeStamp.Declare(String)
+	v.Local.sL2ID_Curr.Declare(String)
+	v.Local.sManuf_Curr.Declare(String)
+	v.Local.sModel_Curr.Declare(String)
+	v.Local.sSerial_Curr.Declare(String)
+	v.Local.sFreq_Curr.Declare(String)
+	v.Local.sNotes_Curr.Declare(String)
+	v.Local.sDoclink_Curr.Declare(String)
+	
+	
+	v.Local.sEName.Set(v.Screen.FormEC!txtEquipName.Text.Trim)
+	
+	'validate required fields
+	'--------------------------------------------------
+	'Name
+	f.Intrinsic.Control.If(v.Local.sEName,=,"")
+		f.Intrinsic.UI.Msgbox("Equipment Name is Required.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'Last Cal Date
+	f.Intrinsic.Control.If(v.Screen.FormEC!dtpLasCalDate.Value,=,"")
+		f.Intrinsic.UI.Msgbox("Last Cal Date is Required.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'Cal Due Date
+	f.Intrinsic.Control.If(v.Screen.FormEC!dtpCalDueDate.Value,=,"")
+		f.Intrinsic.UI.Msgbox("Cal Due Date is Required.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'--------------------------------------------------
+	
+	
+	'Gather data
+	'--------------------------------------------------
+	v.Local.sEType.Set(v.Screen.FormEC!ddlEquipType.Text.Trim)
+	v.Local.sCal.Set(v.Screen.FormEC!ddlCalibrated.Text.Trim)
+	v.Local.sManuf.Set(v.Screen.FormEC!txtManuf.Text.Trim)
+	v.Local.sModel.Set(v.Screen.FormEC!txtModel.Text.Trim)
+	v.Local.sSerial.Set(v.Screen.FormEC!txtSerial.Text.Trim)
+	v.Local.sCalFreq.Set(v.Screen.FormEC!txtCalFreq.Text)
+	v.Local.sL2ID.Set(v.Screen.FormEC!txtL2ID.Text.Trim)
+	v.Local.dCalDueDate_New.Set(v.Screen.FormEC!dtpCalDueDate.Value)
+	v.Local.dDateLastCal_New.Set(v.Screen.FormEC!dtpLasCalDate.Value)
+	v.Local.sStatus.Set(v.Screen.FormEC!ddlStatus.Text.Trim)
+	v.Local.sLocCur.Set(v.Screen.FormEC!txtCurLoc.Text.Trim)
+	v.Local.sLocPerm.Set(v.Screen.FormEC!txtPermLoc.Text.Trim)
+	v.Local.sIssue.Set(v.Screen.FormEC!txtIssue.Text.Trim)
+	v.Local.sOwner.Set(v.Screen.FormEC!txtOwner.Text.Trim)
+	v.Local.sDoclink.Set(v.Screen.FormEC!txtLinkDoc.Text.Trim)
+	f.Intrinsic.String.Build("{0} {1}.000", v.Ambient.Now.FormatYYYY-MM-DD, v.Ambient.Now.FormatHH:NN:SS, v.Local.sTimeStamp)
+	
+	f.Intrinsic.Control.If(v.Local.sCalFreq,=,"")
+		v.Local.sCalFreq.Set("0")
+	f.Intrinsic.Control.EndIf
+	'--------------------------------------------------
+	
+	
+	
+	'check if L2ID exists
+	'--------------------------------------------------
+	f.ODBC.Connection!Con.OpenCompanyConnection
+		f.Intrinsic.String.Build("select * from GCG_6920_EQUIP where RTRIM(L2ID)='{0}'", v.Local.sL2ID.PSQLFriendly, v.Local.sSQL)
+		f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+		
+		'if L2ID does not exist => insert new
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF,=,True)
+			f.Intrinsic.String.Build("insert into GCG_6920_EQUIP (L2ID,EQUIP_NAME, EQUIP_TYPE,CALIBRATED,MANUF,MODEL,SERIAL,CAL_FREQ,DATE_LAST_CAL,DATE_CAL_DUE,STATUS,LOC_CURRENT,LOC_PERM,ISSUE,EQUIP_OWNER,LINK_DOC,LAST_CHANGED,LAST_CHANGED_BY) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}',{7},'{8}','{9}','{10}','{11}','{12}','{13}','{14}','{15}','{16}','{17}')", v.Local.sL2ID.PSQLFriendly, v.Local.sEName.PSQLFriendly, v.Local.sEType.PSQLFriendly, v.Local.sCal.PSQLFriendly, v.Local.sManuf.PSQLFriendly, v.Local.sModel.PSQLFriendly, v.Local.sSerial.PSQLFriendly, v.Local.sCalFreq, v.Local.dDateLastCal_New.PervasiveDate, v.Local.dCalDueDate_New.PervasiveDate, v.Local.sStatus.PSQLFriendly, v.Local.sLocCur.PSQLFriendly, v.Local.sLocPerm.PSQLFriendly, v.Local.sIssue.PSQLFriendly, v.Local.sOwner.PSQLFriendly, v.Local.sDoclink.PSQLFriendly, v.Local.sTimeStamp, v.Caller.User, v.Local.sSQL)
+			f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+			
+		'L2ID exists, check and compare DATE_CAL_DUE
+			'check if Cal Due Date is changed
+		f.Intrinsic.Control.Else
+			'check if due date exist in calibration
+			f.Intrinsic.String.Build("select * from GCG_6920_CAL where RTRIM(L2ID)='{0}' and DATE_CAL_DUE='{1}'", v.Local.sL2ID.PSQLFriendly, v.Local.dCalDueDate_New.PervasiveDate, v.Local.sSQL)
+			f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF,=,False)
+				f.Intrinsic.UI.Msgbox("This a Calibration for this Due Date Already Exists.", "Calibration Exists")
+				f.ODBC.Connection!Con.Close
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+			
+		
+			f.Intrinsic.String.Build("select top 1 DATE_LAST_CAL, DATE_CAL_DUE, RTRIM(L2ID), RTRIM(MANUF), RTRIM(MODEL), RTRIM(SERIAL), CAL_FREQ, RTRIM(NOTES), RTRIM(LINK_DOC) from GCG_6920_EQUIP where RTRIM(L2ID)='{0}' and DATE_CAL_DUE='{1}'", v.Local.sL2ID.PSQLFriendly, v.Local.dCalDueDate_New.PervasiveDate, v.Local.sSQL)
+			f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF,=,True)
+				'insert new Cal then update 
+				f.Intrinsic.String.Build("select top 1 DATE_LAST_CAL, DATE_CAL_DUE, RTRIM(L2ID), RTRIM(MANUF), RTRIM(MODEL), RTRIM(SERIAL), CAL_FREQ, RTRIM(NOTES), RTRIM(LINK_DOC) from GCG_6920_EQUIP where RTRIM(L2ID)='{0}'", v.Local.sL2ID.PSQLFriendly, v.Local.sSQL)
+				f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+				
+				f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+				f.Intrinsic.String.Format(v.Local.sRet(0), "YYYY-MM-DD", v.Local.sDateLastCal_Curr)
+				f.Intrinsic.String.Format(v.Local.sRet(1), "YYYY-MM-DD", v.Local.sCalDueDate_Curr)
+				v.Local.sL2ID_Curr.Set(v.Local.sRet(2))
+				v.Local.sManuf_Curr.Set(v.Local.sRet(3))
+				v.Local.sModel_Curr.Set(v.Local.sRet(4))
+				v.Local.sSerial_Curr.Set(v.Local.sRet(5))
+				v.Local.sFreq_Curr.Set(v.Local.sRet(6))
+				v.Local.sNotes_Curr.Set(v.Local.sRet(7))
+				v.Local.sDoclink_Curr.Set(v.Local.sRet(8))
+				
+				f.Intrinsic.String.Build("insert into GCG_6920_CAL (L2ID,CAL_NOTES,CAL_LINK_DOC,DATE_LAST_CAL,DATE_CAL_DUE,GS_USER,MANUF,MODEL,SERIAL,CAL_FREQ) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}',{9})", v.Local.sL2ID_Curr.PSQLFriendly, v.Local.sNotes_Curr.PSQLFriendly, v.Local.sDoclink_Curr.PSQLFriendly, v.Local.sDateLastCal_Curr, v.Local.sCalDueDate_Curr, v.Caller.User,v.Local.sManuf_Curr.PSQLFriendly, v.Local.sModel_Curr.PSQLFriendly, v.Local.sSerial_Curr.PSQLFriendly, v.Local.sFreq_Curr,v.Local.sSQL)
+				f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+			f.Intrinsic.Control.EndIf
+			
+			'update Equip main record
+			f.Intrinsic.String.Build("update GCG_6920_EQUIP set EQUIP_NAME='{1}', EQUIP_TYPE='{2}', CALIBRATED='{3}', MANUF='{4}', MODEL='{5}', SERIAL='{6}', CAL_FREQ={7}, DATE_LAST_CAL='{8}', DATE_CAL_DUE='{9}', STATUS='{10}', LOC_CURRENT='{11}', LOC_PERM='{12}', ISSUE='{13}', EQUIP_OWNER='{14}', LINK_DOC='{15}', LAST_CHANGED='{16}', LAST_CHANGED_BY='17' where RTRIM(L2ID)='{0}'", v.Local.sL2ID.PSQLFriendly, v.Local.sEName.PSQLFriendly, v.Local.sEType.PSQLFriendly, v.Local.sCal.PSQLFriendly, v.Local.sManuf.PSQLFriendly, v.Local.sModel.PSQLFriendly, v.Local.sSerial.PSQLFriendly, v.Local.sCalFreq, v.Local.dDateLastCal_New.PervasiveDate, v.Local.dCalDueDate_New.PervasiveDate, v.Local.sStatus.PSQLFriendly, v.Local.sLocCur.PSQLFriendly, v.Local.sLocPerm.PSQLFriendly, v.Local.sIssue.PSQLFriendly, v.Local.sOwner.PSQLFriendly, v.Local.sDoclink.PSQLFriendly, v.Local.sTimeStamp, v.Caller.User, v.Local.sSQL)
+			f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+		f.Intrinsic.Control.EndIf
+	f.ODBC.Connection!Con.Close
+	'--------------------------------------------------
+	
+'	f.Intrinsic.Control.CallSub(ClearText)
+	f.Intrinsic.Control.CallSub(Refresh)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+'catch
+'check & close connection
+'show error message
+Program.Sub.Catching.Start
+f.Intrinsic.Control.If(v.ODBC.con.Exists)
+	f.ODBC.Connection!Con.Close
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+
+Program.Sub.Catching.End
+
+'browse doc Equip
+Program.Sub.cmdDocBrowse_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sFile.Declare(String)
+	v.Local.bPDF.Declare(Boolean)
+	
+	f.Intrinsic.UI.ShowOpenFileDialog("", "PDF File|*.pdf;*.PDF", v.Local.sFile)
+	f.Intrinsic.Control.If(v.Local.sFile,!=,"***CANCEL***")
+		gui.FormEC.txtLinkDoc.Text(v.Local.sFile)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdDocBrowse_Click.End
+
+'browse doc Cal
+Program.Sub.cmdCalDocBrowse_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sFile.Declare(String)
+	v.Local.bPDF.Declare(Boolean)
+	
+	f.Intrinsic.UI.ShowOpenFileDialog("", "PDF File|*.pdf;*.PDF", v.Local.sFile)
+	f.Intrinsic.Control.If(v.Local.sFile,!=,"***CANCEL***")
+		gui.FormEC.txtCalLinkDoc.Text(v.Local.sFile)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCalDocBrowse_Click.End
+
+'row cell click
+'	=> L2ID => load equip info into textboxes 
+'			=> load related cali records
+'	=> Notes => Notes form
+Program.Sub.GsGcEquip_RowCellClick.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	v.Local.sID.Declare(String)
+	
+	
+	v.Local.sID.Set(v.DataTable.dtEquip(v.Args.RowIndex).L2ID!FieldValTrim)
+	v.Global.sL2ID_Current.Set(v.Local.sID)
+	
+	f.Intrinsic.Control.SelectCase(v.Args.Column)
+		f.Intrinsic.Control.Case("NOTES")
+			v.Global.sNotesType.Set("Equip")
+			f.Intrinsic.Control.CallSub(OpenNotes, "argL2ID", v.Local.sID, "argNotes", v.DataTable.dtEquip(v.Args.RowIndex).NOTES!FieldValTrim)
+		f.Intrinsic.Control.Case("L2ID")
+			f.Intrinsic.Control.CallSub(GetDataCal, "argL2ID", v.Local.sID)
+			f.Intrinsic.Control.CallSub(PopulateEquipDetail, "argRowIndex", v.Args.RowIndex)
+		f.Intrinsic.Control.Case("DOC_LINK")
+			'open doc
+			'open doc if any
+			'browse if not
+			f.Intrinsic.Control.If(v.DataTable.dtEquip(v.Args.RowIndex).LINK_DOC!FieldValTrim,=,"")
+				f.Intrinsic.Control.CallSub(cmdDocBrowse_Click)
+			f.Intrinsic.Control.Else
+				F.Intrinsic.Task.ShellExec(0,"Open",v.DataTable.dtEquip(v.Args.RowIndex).LINK_DOC!FieldValTrim,"","",0)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Case("SELECT")
+			f.Intrinsic.Control.If(v.DataTable.dtEquip(v.Args.RowIndex).SELECT!FieldVal,=,"1")
+				f.Data.DataTable.SetValue("dtEquip", v.Args.RowIndex, "SELECT", False)
+			f.Intrinsic.Control.Else
+				f.Data.DataTable.SetValue("dtEquip", v.Args.RowIndex, "SELECT", True)
+			f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndSelect
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcEquip_RowCellClick.End
+
+'populate detail when selecting an Equipment record
+'arg: argRowIndex
+Program.Sub.PopulateEquipDetail.Start
+f.Intrinsic.Control.Try
+	v.Local.sRowIndex.Declare(String)
+	v.Local.sRowIndex.Set(v.Args.argRowIndex)
+	f.Intrinsic.Control.CallSub(ClearText)
+	
+	'populate texts
+	gui.FormEC.txtEquipName.Text(v.DataTable.dtEquip(v.Local.sRowIndex).EQUIP_NAME!FieldValTrim)
+	gui.FormEC.ddlEquipType.Text(v.DataTable.dtEquip(v.Local.sRowIndex).EQUIP_TYPE!FieldValTrim)
+	gui.FormEC.ddlCalibrated.Text(v.DataTable.dtEquip(v.Local.sRowIndex).CALIBRATED!FieldValTrim)
+	gui.FormEC.txtManuf.Text(v.DataTable.dtEquip(v.Local.sRowIndex).MANUF!FieldValTrim)
+	gui.FormEC.txtModel.Text(v.DataTable.dtEquip(v.Local.sRowIndex).MODEL!FieldValTrim)
+	gui.FormEC.txtSerial.Text(v.DataTable.dtEquip(v.Local.sRowIndex).SERIAL!FieldValTrim)
+	gui.FormEC.txtL2ID.Text(v.DataTable.dtEquip(v.Local.sRowIndex).L2ID!FieldValTrim)
+	gui.FormEC.txtCalFreq.Text(v.DataTable.dtEquip(v.Local.sRowIndex).CAL_FREQ!FieldVal)
+	gui.FormEC.dtpLasCalDate.Value(v.DataTable.dtEquip(v.Local.sRowIndex).DATE_LAST_CAL!FieldVal)
+	gui.FormEC.dtpCalDueDate.Value(v.DataTable.dtEquip(v.Local.sRowIndex).DATE_CAL_DUE!FieldVal)
+	gui.FormEC.ddlStatus.Text(v.DataTable.dtEquip(v.Local.sRowIndex).STATUS!FieldValTrim)
+	gui.FormEC.txtCurLoc.Text(v.DataTable.dtEquip(v.Local.sRowIndex).LOC_CURRENT!FieldValTrim)
+	gui.FormEC.txtPermLoc.Text(v.DataTable.dtEquip(v.Local.sRowIndex).LOC_PERM!FieldValTrim)
+	gui.FormEC.txtIssue.Text(v.DataTable.dtEquip(v.Local.sRowIndex).ISSUE!FieldValTrim)
+	gui.FormEC.txtOwner.Text(v.DataTable.dtEquip(v.Local.sRowIndex).EQUIP_OWNER!FieldValTrim)
+	gui.FormEC.txtLinkDoc.Text(v.DataTable.dtEquip(v.Local.sRowIndex).LINK_DOC!FieldValTrim)
+	
+	gui.FormEC.txtL2ID.Enabled(False)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.PopulateEquipDetail.End
+
+'open note
+'argL2ID, argNotes
+Program.Sub.OpenNotes.Start
+f.Intrinsic.Control.Try
+	gui.FormNotes.txtL2ID.Text("")
+	gui.FormNotes.txtNotes.Text("")
+	gui.FormNotes.txtL2ID.Text(v.Args.argL2ID)
+	gui.FormNotes.txtNotes.Text(v.Args.argNotes)
+	gui.FormEC..Enabled(False)
+	gui.FormNotes..Visible(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.OpenNotes.End
+
+'clear texts in textboxes, dropdowns, datepickers
+Program.Sub.ClearText.Start
+f.Intrinsic.Control.Try
+	gui.FormEC.txtEquipName.Text("")
+	gui.FormEC.ddlEquipType.Text("Other")
+	gui.FormEC.ddlCalibrated.Text("N")
+	gui.FormEC.txtManuf.Text("")
+	gui.FormEC.txtModel.Text("")
+	gui.FormEC.txtSerial.Text("")
+	gui.FormEC.txtL2ID.Text("")
+	gui.FormEC.txtCalFreq.Text("")
+	gui.FormEC.dtpLasCalDate.Value("")
+	gui.FormEC.dtpCalDueDate.Value("")
+	gui.FormEC.ddlStatus.Text("Active")
+	gui.FormEC.txtCurLoc.Text("")
+	gui.FormEC.txtPermLoc.Text("")
+	gui.FormEC.txtIssue.Text("")
+	gui.FormEC.txtOwner.Text("")
+	gui.FormEC.txtLinkDoc.Text("")
+	gui.FormEC.txtCalLinkDoc.Text("")
+	
+	gui.FormEC.txtL2ID.Enabled(True)
+	gui.FormEC.cmdCalDocBrowse.Enabled(False)
+	gui.FormEC.cmdUpdateDoc.Enabled(False)
+	
+	v.Global.sL2ID_Current.Set("")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.ClearText.End
+
+'Cal RowCell Click
+Program.Sub.GsGcCal_RowCellClick.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	v.Local.sID.Declare(String)
+	v.Local.dDateDue.Declare(Date)
+	v.Local.sIndex.Declare(String)
+	
+	v.Local.sID.Set(v.DataTable.dtCal(v.Args.RowIndex).L2ID!FieldValTrim)
+	v.Local.sIndex.Set(v.Args.RowIndex)
+	v.Global.sL2ID_Current.Set(v.DataTable.dtCal(v.Args.RowIndex).L2ID!FieldValTrim)
+	v.Global.dDateCalDue_Current.Set(v.DataTable.dtCal(v.Args.RowIndex).DATE_CAL_DUE!FieldVal)
+	
+	f.Intrinsic.Control.SelectCase(v.Args.Column)
+		f.Intrinsic.Control.CaseAny("L2ID","DATE_CAL_DUE")
+			f.Intrinsic.Control.CallSub(PopulateCalDoc, "argRowIndex", v.Local.sIndex)
+		f.Intrinsic.Control.Case("DOC_LINK")
+			'open doc if any
+			'browse if not
+			f.Intrinsic.Control.If(v.DataTable.dtCal(v.Args.RowIndex).CAL_LINK_DOC!FieldValTrim,!=,"")
+				F.Intrinsic.Task.ShellExec(0,"Open",v.DataTable.dtCal(v.Args.RowIndex).CAL_LINK_DOC!FieldValTrim,"","",0)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Case("CAL_NOTES")
+			v.Global.sNotesType.Set("Cal")
+			f.Intrinsic.Control.CallSub(OpenNotes, "argL2ID", v.Local.sID, "argNotes", v.DataTable.dtCal(v.Args.RowIndex).CAL_NOTES!FieldValTrim)
+	f.Intrinsic.Control.EndSelect
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcCal_RowCellClick.End
+
+'populate CAL_DOC
+'arg: argRowIndex
+Program.Sub.PopulateCalDoc.Start
+f.Intrinsic.Control.Try
+	gui.FormEC.txtCalLinkDoc.Text(v.DataTable.dtCal(v.Args.argRowIndex).CAL_LINK_DOC!FieldValTrim)
+
+	gui.FormEC.cmdCalDocBrowse.Enabled(True)
+	gui.FormEC.cmdUpdateDoc.Enabled(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.PopulateCalDoc.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+	V.Local.sSerialize.Declare(String)
+	gui.FormEC.GsGcEquip.Serialize("gvEquip",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvEquip",6920,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+	V.Local.sSerialize.Declare(String)
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvEquip",6920,1000,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		gui.FormEC.GsGcEquip.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.Serialize_Cal.Start
+F.Intrinsic.Control.Try
+	V.Local.sSerialize.Declare(String)
+	gui.FormEC.GsGcCal.Serialize("gvCal",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvCal",6920,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize_Cal.End
+
+Program.Sub.Deserialize_Cal.Start
+F.Intrinsic.Control.Try
+	V.Local.sSerialize.Declare(String)
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvCal",6920,1000,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		gui.FormEC.GsGcCal.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize_Cal.End
+
+Program.Sub.FormEC_UnLoad.Start
+f.Intrinsic.Control.Try
+
+	'serialize
+	f.Intrinsic.Control.CallSub(Serialize)
+	f.Intrinsic.Control.CallSub(Serialize_Cal)
+	f.Intrinsic.Control.End
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+Program.Sub.FormEC_UnLoad.End
+
+'update cal doc
+Program.Sub.cmdUpdateDoc_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sDoclink.Declare(String)
+	v.Local.sSQL.Declare(String)
+	
+	f.Intrinsic.Control.If(v.Global.sL2ID_Current,!=,"")
+		v.Local.sDoclink.Set(v.Screen.FormEC!txtCalLinkDoc.Text.Trim)
+		f.Intrinsic.String.Build("update GCG_6920_CAL set CAL_LINK_DOC='{2}' where RTRIM(L2ID)='{0}' and DATE_CAL_DUE='{1}'", v.Global.sL2ID_Current.PSQLFriendly, v.Global.dDateCalDue_Current.PervasiveDate, v.Local.sDoclink.PSQLFriendly, v.Local.sSQL)
+		f.ODBC.Connection!Con.OpenCompanyConnection
+			f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+		f.ODBC.Connection!Con.Close
+		f.Intrinsic.Control.CallSub(GetDataCal, "argL2ID", v.Global.sL2ID_Current)
+		f.Intrinsic.UI.Msgbox("SAVED!")
+	f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpdateDoc_Click.End
+
+Program.Sub.FormNotes_UnLoad.Start
+gui.FormNotes..Visible(False)
+gui.FormEC..AlwaysOnTop(True)
+gui.FormEC..AlwaysOnTop(False)
+gui.FormEC..Enabled(True)
+Program.Sub.FormNotes_UnLoad.End
+
+'Save Notes
+Program.Sub.cmdNotesSave_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	v.Local.sNotes.Declare(String)
+	
+	v.Local.sNotes.Set(v.Screen.FormNotes!txtNotes.Text.Trim)
+	
+	f.Intrinsic.Control.If(v.Global.sNotesType,=,"Equip")
+		f.Intrinsic.String.Build("update GCG_6920_EQUIP set NOTES='{1}' where RTRIM(L2ID)='{0}'", v.Global.sL2ID_Current.PSQLFriendly, v.Local.sNotes.PSQLFriendly, v.Local.sSQL)	
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("update GCG_6920_CAL set CAL_NOTES='{2}' where RTRIM(L2ID)='{0}' and DATE_CAL_DUE='{1}'", v.Global.sL2ID_Current.PSQLFriendly, v.Global.dDateCalDue_Current.PervasiveDate, v.Local.sNotes.PSQLFriendly, v.Local.sSQL)
+	f.Intrinsic.Control.EndIf
+	
+	f.ODBC.Connection!Con.OpenCompanyConnection
+		f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+	f.ODBC.Connection!Con.Close
+	
+	f.Intrinsic.Control.If(v.Global.sNotesType,=,"Equip")
+		f.Intrinsic.Control.CallSub(Refresh)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Control.CallSub(GetDataCal, "argL2ID", v.Global.sL2ID_Current)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.UI.Msgbox("SAVED!")
+	
+	f.Intrinsic.Control.CallSub(FormNotes_UnLoad)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdNotesSave_Click.End
+
+Program.Sub.cmdNotesCancel_Click.Start
+f.Intrinsic.Control.CallSub(FormNotes_UnLoad)
+Program.Sub.cmdNotesCancel_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$nle$}$20220930114002919$}$kjzCRYkA6UEoRnCwndYnRYciZCm2U5XYYnkVVNqQ8OCgpzSSQu4LQpISuR4/n93n
+Program.Sub.Comments.End
